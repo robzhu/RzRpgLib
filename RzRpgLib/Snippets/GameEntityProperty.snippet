@@ -1,0 +1,27 @@
+﻿<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <Title>GameEntity Property</Title>
+    <Author>Robert Zhu</Author>
+    <Shortcut>gep</Shortcut>
+    <Description>Creates a GameEntityProperty getter with the specified name.</Description>
+    <SnippetTypes>
+      <SnippetType>SurroundsWith</SnippetType>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+  </Header>
+  <Snippet>
+    <Declarations>
+      <Literal>
+        <ID>name</ID>
+        <ToolTip>The name of the property</ToolTip>
+        <Default>Name</Default>
+      </Literal>
+    </Declarations>
+    <Code Language="CSharp">
+      <![CDATA[
+      public static string Property_$name$ = "$name$";
+      public IGameEntityProperty $name$ { get { return GetProperty( Property_$name$ ); } }
+      $selected$ $end$]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

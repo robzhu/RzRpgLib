@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{213DA629-1E16-4369-BFE4-8FD92949C304}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RzRpgLib</RootNamespace>
+    <AssemblyName>RzRpgLib</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HaveBox, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\HaveBox.2.0.0\lib\net45\HaveBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="RzAspects, Version=0.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RzAspects.0.5.0.0\lib\net45\RzAspects.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actions\ActionEffects\EffectProcessorMap.cs" />
+    <Compile Include="Actions\ActionEffects\EffectProcessor.cs" />
+    <Compile Include="Actions\ActionEffects\ApplyInstantEffectEffect.cs" />
+    <Compile Include="Actions\ActionEffects\ApplyPersistentEffectEffect.cs" />
+    <Compile Include="Actions\ActionExecutor.cs" />
+    <Compile Include="Actions\ActionExecutorMap.cs" />
+    <Compile Include="Actions\ActionRequirement.cs" />
+    <Compile Include="Actions\ActionEffects\ActionEffect.cs" />
+    <Compile Include="Actions\CooldownRequirement.cs" />
+    <Compile Include="Actions\ActionResult.cs" />
+    <Compile Include="Actions\MinimumResourceRequirement.cs" />
+    <Compile Include="Actions\PropertyStateRequirement.cs" />
+    <Compile Include="Actions\ResourceRequirement.cs" />
+    <Compile Include="Actions\GameEntityActor.cs" />
+    <Compile Include="Actions\GameEntityAction.cs" />
+    <Compile Include="Effects\CompositeGameEntityEffect.cs" />
+    <Compile Include="Effects\PeriodicEffect.cs" />
+    <Compile Include="Effects\PeriodicResourceModifier.cs" />
+    <Compile Include="Expressions\ValueExpressionDelegates.cs" />
+    <Compile Include="Expressions\ValueSourceDescriptor.cs" />
+    <Compile Include="GameCore\Logging\MessageLogEntry.cs" />
+    <Compile Include="GameCore\Logging\MessageLog.cs" />
+    <Compile Include="GameEntityProperties\ApplyEffectToParentProperty.cs" />
+    <Compile Include="Time\Cooldown.cs" />
+    <Compile Include="IBoundEvaluationComponent.cs" />
+    <Compile Include="Effects\CalculatedResourceModifier.cs" />
+    <Compile Include="Effects\GameEntityEffect.cs" />
+    <Compile Include="Effects\ResourceModifier.cs" />
+    <Compile Include="Effects\PropertyDefinitionEffect.cs" />
+    <Compile Include="Effects\StatisticModifier.cs" />
+    <Compile Include="Effects\PropertyModifierEffect.cs" />
+    <Compile Include="GameCore\Game.cs" />
+    <Compile Include="GameEntityProperties\ValueSource.cs" />
+    <Compile Include="GameEntityProperties\GameEntityExtensions.cs" />
+    <Compile Include="GameEntityProperties\Resources\ResourceProperty.cs" />
+    <Compile Include="GameEntityProperties\Resources\Resource.cs" />
+    <Compile Include="GameEntityProperties\Statistics\AddStatisticExtensions.cs" />
+    <Compile Include="GameEntityProperties\Statistics\StatisticProperty.cs" />
+    <Compile Include="GameEntityProperties\Statistics\Statistic.cs" />
+    <Compile Include="GameEntityProperties\GameEntityProperty.cs" />
+    <Compile Include="GameEntity.cs" />
+    <Compile Include="GameEntityPropertyBindingException.cs" />
+    <Compile Include="GameEntityPropertyChanged.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Snippets\GameEntityProperty.snippet" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
